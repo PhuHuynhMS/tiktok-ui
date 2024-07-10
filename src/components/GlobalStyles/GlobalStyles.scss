@@ -2,7 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --primary: #fe2c55;
+  --primary: rgb(254, 44, 85);
+  --black: #000;
+  --text-color: #333;
+  --white: rgb(255, 255, 255);
   // default layout variable
   --default-layout-width-content: 1528px;
   --default-layout-header-height: 60px;
@@ -23,4 +26,10 @@ body {
   line-height: 1.5;
   font-size: 1.6rem;
   text-rendering: optimizeSpeed;
+  color: var(--text-color);
+}
+
+a[href] {
+  color: var(--text-color);
+  text-decoration: none;
 }

@@ -1,4 +1,3 @@
-import clsx from "classnames/bind";
 import styles from "./Sidebar.module.scss";
 import classNames from "classnames/bind";
 

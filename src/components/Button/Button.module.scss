@@ -1,0 +1,63 @@
+.wrapper {
+  padding: 9px 9px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent; // để sau này có thêm border vào cũng không bị chênh lệch kích thước
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.rounded {
+  border-color: rgba(22, 24, 35, 0.12);
+  border-radius: 52px;
+  height: 32px;
+  color: rgba(22, 24, 35, 0.75);
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+  padding: 0 8px;
+  text-align: center;
+  min-width: 90px;
+  background-color: var(--white);
+
+  &:hover {
+    border-color: rgba(22, 24, 35, 0.2);
+  }
+}
+
+.primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+      rgb(254, 44, 85);
+    border-color: var(--primary);
+  }
+}
+
+.outline {
+  padding: 14px 62px;
+  min-height: 48px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background-color: var(--white);
+
+  &:hover {
+    background-color: rgba(254, 44, 85, 0.06);
+    border-color: var(--primary);
+  }
+}
+
+.follow {
+  padding: 8px 11px;
+  border-radius: 8px;
+}
