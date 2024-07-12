@@ -4,8 +4,13 @@ import {
   faCircleXmark,
   faSpinner,
   faMagnifyingGlass,
+  faEllipsisV,
+  faEarthAsia,
+  faCircleQuestion,
+  faMoon,
+  faCirclePlay,
 } from "@fortawesome/free-solid-svg-icons";
-import Tippy from "@tippyjs/react";
+import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import classNames from "classnames/bind";
 
@@ -14,6 +19,29 @@ import styles from "./Header.module.scss";
 import images from "~/assets/images";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
+import { icon } from "@fortawesome/fontawesome-svg-core";
+import Menu from "~/components/Popper/Menu";
+
+//Menu items
+const MENU_ITEMS = [
+  {
+    icon: <FontAwesomeIcon icon={faCirclePlay} />,
+    title: "Công cụ dành cho nhà sáng tạo",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faEarthAsia} />,
+    title: "Tiếng Việt",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+    title: "Phản hồi và trợ giúp",
+    to: "https://www.tiktok.com/feedback?lang=vi-VN",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faMoon} />,
+    title: "Chế độ tối",
+  },
+];
 
 const cx = classNames.bind(styles);
 
@@ -61,6 +89,11 @@ function Header() {
         </Tippy>
         <div className={cx("actions")}>
           <Button primary>Đăng nhập</Button>
+          <Menu items={MENU_ITEMS}>
+            <button className={cx("more-btn")}>
+              <FontAwesomeIcon icon={faEllipsisV} />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>

@@ -3,8 +3,12 @@ import styles from "./Wrapper.module.scss";
 
 const cx = classNames.bind(styles);
 
-function Wrapper({ children }) {
-  return <div className={cx("wrapper")}>{children}</div>;
+function Wrapper({ children, moreWrapper = false }) {
+  const classes = cx("wrapper", {
+    moreWrapper,
+  });
+
+  return <div className={classes}>{children}</div>;
 }
 
 export default Wrapper;

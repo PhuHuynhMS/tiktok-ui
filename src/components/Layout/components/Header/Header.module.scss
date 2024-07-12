@@ -135,9 +135,17 @@
   cursor: pointer;
 }
 
-.list {
-  width: 28px;
-  height: 20px;
+.more-btn {
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
   margin-left: 16px;
+  padding: 0 16px;
   cursor: pointer;
+}
+
+.menu-item {
+  width: 290px;
+  min-height: 180px;
+  padding: 5px 0;
 }
