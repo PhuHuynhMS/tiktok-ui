@@ -21,6 +21,7 @@ import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import Menu from "~/components/Popper/Menu";
+import { type } from "@testing-library/user-event/dist/type";
 
 //Menu items
 const MENU_ITEMS = [
@@ -31,6 +32,21 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
     title: "Tiếng Việt",
+    children: {
+      title: "Language",
+      data: [
+        {
+          type: "Language",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Language",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -47,6 +63,15 @@ const cx = classNames.bind(styles);
 
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
+
+  const onChange = (menuItem) => {
+    switch (menuItem.type) {
+      case "Language":
+        // Handle language
+        break;
+      default:
+    }
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -89,7 +114,7 @@ function Header() {
         </Tippy>
         <div className={cx("actions")}>
           <Button primary>Đăng nhập</Button>
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={onChange}>
             <button className={cx("more-btn")}>
               <FontAwesomeIcon icon={faEllipsisV} />
             </button>

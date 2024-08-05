@@ -1,10 +1,11 @@
 .menu-item-btns {
   display: flex;
   justify-content: flex-start;
+  line-height: 2.6rem;
   border-radius: 0;
   background-color: transparent;
   color: rgb(22, 24, 35);
-  padding: 10px 8px 11px 16px;
+  padding: 10px 16px 11px 16px;
   width: 100%;
   margin-bottom: 3px;
 
@@ -21,4 +22,27 @@
 
 .content {
   margin-top: 3px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-top: -8px;
+}
+
+.header-title {
+}
+
+.back-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
 }
